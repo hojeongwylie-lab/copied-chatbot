@@ -1,0 +1,1 @@
+ALTER TABLE public.faq_keywords ADD COLUMN search_keywords text DEFAULT null;

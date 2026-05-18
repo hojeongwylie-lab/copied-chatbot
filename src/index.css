@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 220 60% 20%;
+    --primary-foreground: 40 50% 95%;
+
+    --secondary: 38 70% 55%;
+    --secondary-foreground: 220 60% 10%;
+
+    --muted: 220 15% 93%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 38 70% 55%;
+    --accent-foreground: 220 60% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 60% 20%;
+
+    --radius: 0.75rem;
+
+    --chat-user: 220 60% 20%;
+    --chat-user-foreground: 0 0% 100%;
+    --chat-bot: 220 15% 95%;
+    --chat-bot-foreground: 220 20% 10%;
+    --chat-banner: 220 60% 20%;
+    --chat-banner-foreground: 40 50% 95%;
+    --chat-banner-hover: 220 60% 28%;
+    --gold: 38 75% 55%;
+    --gold-bright: 42 90% 62%;
+    --gold-light: 38 60% 90%;
+    --navy: 220 60% 20%;
+    --navy-deep: 222 65% 14%;
+    --navy-light: 220 40% 40%;
+
+    /* Gradients */
+    --gradient-header: linear-gradient(135deg, hsl(222 65% 14%) 0%, hsl(220 60% 22%) 50%, hsl(225 55% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 62%) 0%, hsl(38 75% 50%) 100%);
+    --gradient-banner: linear-gradient(135deg, hsl(220 60% 22%) 0%, hsl(225 55% 32%) 100%);
+    --gradient-banner-hover: linear-gradient(135deg, hsl(225 60% 30%) 0%, hsl(220 55% 38%) 100%);
+    --gradient-bg: linear-gradient(180deg, hsl(220 30% 96%) 0%, hsl(220 20% 92%) 100%);
+    --gradient-bot-bubble: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 25% 96%) 100%);
+
+    /* Shadows */
+    --shadow-header: 0 4px 20px -4px hsl(222 65% 14% / 0.35);
+    --shadow-glow-gold: 0 0 0 1px hsl(42 90% 62% / 0.4), 0 4px 12px -2px hsl(38 75% 50% / 0.4);
+    --shadow-banner: 0 4px 14px -4px hsl(222 65% 14% / 0.3);
+    --shadow-bubble: 0 2px 8px -2px hsl(220 40% 20% / 0.08);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 220 60% 15%;
+    --sidebar-foreground: 220 15% 90%;
+    --sidebar-primary: 38 70% 55%;
+    --sidebar-primary-foreground: 220 60% 10%;
+    --sidebar-accent: 220 50% 25%;
+    --sidebar-accent-foreground: 220 15% 90%;
+    --sidebar-border: 220 50% 25%;
+    --sidebar-ring: 38 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}
+
+@layer utilities {
+  .chat-bubble-user {
+    background: linear-gradient(135deg, hsl(220 60% 25%) 0%, hsl(220 65% 18%) 100%);
+    @apply text-[hsl(var(--chat-user-foreground))] rounded-2xl rounded-br-sm px-4 py-2.5 shadow-[var(--shadow-bubble)];
+  }
+  .chat-bubble-bot {
+    background: var(--gradient-bot-bubble);
+    @apply text-[hsl(var(--chat-bot-foreground))] rounded-2xl rounded-bl-sm px-4 py-2.5 shadow-[var(--shadow-bubble)] border border-border/40;
+  }
+  .chat-banner-card {
+    background: var(--gradient-banner);
+    @apply text-[hsl(var(--chat-banner-foreground))] cursor-pointer rounded-xl px-4 py-3 text-sm font-medium shadow-[var(--shadow-banner)] border border-white/10 hover:-translate-y-0.5 transition-[transform,box-shadow,background] duration-300;
+  }
+  .chat-banner-card:hover {
+    background: var(--gradient-banner-hover);
+    box-shadow: 0 8px 20px -4px hsl(222 65% 14% / 0.4), 0 0 0 1px hsl(0 0% 100% / 0.25);
+  }
+  .faq-tag {
+    @apply bg-muted text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white hover:shadow-md transition-all cursor-pointer rounded-full px-3 py-1 text-xs font-medium border border-border;
+  }
+  .gradient-header { background: var(--gradient-header); }
+  .gradient-gold { background: var(--gradient-gold); }
+  .gradient-bg { background: var(--gradient-bg); }
+  .shadow-header { box-shadow: var(--shadow-header); }
+  .shadow-glow-gold { box-shadow: var(--shadow-glow-gold); }
+  .scrollbar-thin,
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-thin::-webkit-scrollbar,
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.animate-shimmer { animation: shimmer 2.5s ease-in-out infinite; }
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.send-btn-gradient {
+  background: linear-gradient(120deg, hsl(220 65% 16%) 0%, hsl(220 30% 45%) 30%, hsl(220 12% 70%) 55%, hsl(220 30% 45%) 80%, hsl(220 65% 16%) 100%);
+  background-size: 250% 250%;
+  animation: gradient-flow 4s ease-in-out infinite;
+  box-shadow: 0 4px 14px -2px hsl(220 60% 20% / 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.send-btn-gradient:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 6px 18px -2px hsl(220 60% 20% / 0.55);
+  animation-duration: 2s;
+}
+
+.ProseMirror {
+  @apply min-h-[120px] p-3 outline-none;
+}
+.ProseMirror p {
+  @apply mb-2;
+}

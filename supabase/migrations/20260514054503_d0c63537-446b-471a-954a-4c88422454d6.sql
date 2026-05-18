@@ -1,0 +1,1 @@
+ALTER TABLE public.scenario_nodes ADD COLUMN IF NOT EXISTS link_buttons JSONB NOT NULL DEFAULT '[]'::jsonb;
