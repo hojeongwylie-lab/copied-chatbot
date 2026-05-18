@@ -98,7 +98,6 @@ function ChatPage() {
                 size="icon-sm"
                 status={status}
                 onStop={stop}
-                disabled={!isLoading && false}
               />
             </PromptInputFooter>
           </PromptInput>
