@@ -125,7 +125,7 @@ Deno.serve(async (req) => {
     const brandBlock = matchedBrands.map((b: any, i: number) => {
       const sc = STORE_CODE_MAP[b.store_name] || "00";
       const url = `https://app.premiumoutlets.co.kr/rpage/store/brand/category-view/${b.tenant_code}/${sc}`;
-      return `[BRAND-${i + 1}] ${b.brand_name} (${b.brand_name_en || ""}) — store: ${b.store_name}, link: ${url}`;
+      return `[BRAND-${i + 1}] ${b.brand_name} (${b.brand_name_en || ""}) — store: ${b.store_name}, category: ${b.category}, link: ${url}`;
     }).join("\n");
 
     const systemPrompt = `당신은 신세계사이먼 프리미엄 아울렛(한국)의 공식 고객지원 챗봇입니다.
