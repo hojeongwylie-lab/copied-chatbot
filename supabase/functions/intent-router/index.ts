@@ -184,8 +184,8 @@ For further inquiries, including current operating status, please contact the Cu
 • <a href="{링크}" target="_blank">{지점} 店舗詳細情報を確認する</a><br/><br/>
 現在の営業状況など、詳しいお問い合わせはカスタマーセンター（${customerPhone || "{번호}"}）または各店舗の案内センターまでお問い合わせください。
 
-{지점} = 여주 / 파주 / 부산 / 시흥 / 제주 (drop the "점" suffix in non-Korean languages but keep it in Korean as "여주점" etc.).
-{브랜드명} = Korean name in ko, English name in en/zh/ja (fallback to Korean if English missing).
+{지점} = 여주 / 파주 / 부산 / 시흥 / 제주 (한국어가 아닌 언어에서는 "점" 접미사를 생략하되, 한국어에서는 "여주점" 등으로 유지).
+{브랜드명} = ko에서는 한글명, en/zh/ja에서는 영문명 사용 (영문명이 없는 경우 한글명으로 대체).
 
 === SOURCES ===
 
